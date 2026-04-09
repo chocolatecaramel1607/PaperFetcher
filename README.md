@@ -75,7 +75,7 @@ Frontend configuration via `frontend/.env`:
 | GET | `/api/domains` | Available preset domains |
 | GET | `/api/settings` | User's saved domain preferences |
 | POST | `/api/settings` | Update user's domain preferences |
-| GET | `/api/papers/:id/bookmark` | Toggle bookmark |
+| POST | `/api/papers/:id/bookmark` | Toggle bookmark |
 | POST | `/api/papers/:id/read` | Toggle read status |
 
 ## Architecture
