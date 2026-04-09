@@ -45,7 +45,7 @@ async def get_papers(
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=100),
     domain: Optional[str] = None,
-    sort_by: str = Query("date", regex="^(date|citations)$"),
+    sort_by: str = Query("date", pattern="^(date|citations)$"),
     bookmarked_only: bool = False,
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
@@ -118,7 +118,7 @@ async def get_papers(
     )
 
 
-@router.get("/{paper_id}/bookmark")
+@router.post("/{paper_id}/bookmark")
 async def toggle_bookmark(
     paper_id: int,
     current_user: User = Depends(get_current_user),

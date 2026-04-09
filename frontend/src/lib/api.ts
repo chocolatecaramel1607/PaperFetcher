@@ -74,7 +74,9 @@ export const api = {
   },
 
   toggleBookmark(paperId: number) {
-    return request<{ bookmarked: boolean }>(`/api/papers/${paperId}/bookmark`);
+    return request<{ bookmarked: boolean }>(`/api/papers/${paperId}/bookmark`, {
+      method: "POST",
+    });
   },
 
   toggleRead(paperId: number) {
